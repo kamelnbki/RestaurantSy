@@ -38,6 +38,9 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -50,15 +53,13 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             TopPanel = new Guna.UI2.WinForms.Guna2Panel();
             UserLabel = new Label();
             minimizeBtn = new Guna.UI2.WinForms.Guna2ControlBox();
             maxSizeBtn = new Guna.UI2.WinForms.Guna2ControlBox();
             exitBtn = new Guna.UI2.WinForms.Guna2ControlBox();
             SideBarePanel = new Guna.UI2.WinForms.Guna2Panel();
+            staffBtn = new Guna.UI2.WinForms.Guna2Button();
             singoutBtn = new Guna.UI2.WinForms.Guna2Button();
             SettingBtn = new Guna.UI2.WinForms.Guna2Button();
             TablesBtn = new Guna.UI2.WinForms.Guna2Button();
@@ -67,7 +68,6 @@
             restaurantLabel = new Label();
             Picture = new Guna.UI2.WinForms.Guna2PictureBox();
             CenterPanel = new Panel();
-            staffBtn = new Guna.UI2.WinForms.Guna2Button();
             TopPanel.SuspendLayout();
             SideBarePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Picture).BeginInit();
@@ -156,6 +156,31 @@
             SideBarePanel.ShadowDecoration.CustomizableEdges = customizableEdges24;
             SideBarePanel.Size = new Size(268, 996);
             SideBarePanel.TabIndex = 1;
+            // 
+            // staffBtn
+            // 
+            staffBtn.AutoRoundedCorners = true;
+            staffBtn.BackColor = Color.Transparent;
+            staffBtn.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            staffBtn.CheckedState.FillColor = Color.FromArgb(255, 192, 192);
+            customizableEdges9.BottomRight = false;
+            customizableEdges9.TopRight = false;
+            staffBtn.CustomizableEdges = customizableEdges9;
+            staffBtn.DisabledState.BorderColor = Color.DarkGray;
+            staffBtn.DisabledState.CustomBorderColor = Color.DarkGray;
+            staffBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            staffBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            staffBtn.FillColor = Color.FromArgb(192, 192, 255);
+            staffBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            staffBtn.ForeColor = Color.White;
+            staffBtn.Image = (Image)resources.GetObject("staffBtn.Image");
+            staffBtn.Location = new Point(18, 563);
+            staffBtn.Name = "staffBtn";
+            staffBtn.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            staffBtn.Size = new Size(250, 67);
+            staffBtn.TabIndex = 6;
+            staffBtn.Text = "Staff";
+            staffBtn.Click += staffBtn_Click;
             // 
             // singoutBtn
             // 
@@ -311,31 +336,6 @@
             CenterPanel.Size = new Size(1132, 996);
             CenterPanel.TabIndex = 2;
             // 
-            // staffBtn
-            // 
-            staffBtn.AutoRoundedCorners = true;
-            staffBtn.BackColor = Color.Transparent;
-            staffBtn.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            staffBtn.CheckedState.FillColor = Color.FromArgb(255, 192, 192);
-            customizableEdges9.BottomRight = false;
-            customizableEdges9.TopRight = false;
-            staffBtn.CustomizableEdges = customizableEdges9;
-            staffBtn.DisabledState.BorderColor = Color.DarkGray;
-            staffBtn.DisabledState.CustomBorderColor = Color.DarkGray;
-            staffBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            staffBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            staffBtn.FillColor = Color.FromArgb(192, 192, 255);
-            staffBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            staffBtn.ForeColor = Color.White;
-            staffBtn.Image = (Image)resources.GetObject("staffBtn.Image");
-            staffBtn.Location = new Point(18, 563);
-            staffBtn.Name = "staffBtn";
-            staffBtn.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            staffBtn.Size = new Size(250, 67);
-            staffBtn.TabIndex = 6;
-            staffBtn.Text = "Staff";
-            staffBtn.Click += staffBtn_Click;
-            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(120F, 120F);
@@ -346,7 +346,6 @@
             Controls.Add(SideBarePanel);
             Controls.Add(TopPanel);
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            FormBorderStyle = FormBorderStyle.None;
             Name = "MainForm";
             Text = "MainForm";
             WindowState = FormWindowState.Maximized;
