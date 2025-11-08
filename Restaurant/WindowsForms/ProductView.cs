@@ -14,67 +14,64 @@ using static Restaurant.Data.Enums.Enums;
 
 namespace Restaurant.WindowsForms
 {
-    public partial class StaffView : SampleView
+    public partial class ProductView : SampleView
     {
         ApplicationDbContext _applicationDbContext;
-        DbSet<Staff> table;
-        public StaffView()
+        DbSet<Products> table;
+        public ProductView()
         {
             InitializeComponent();
             _applicationDbContext = new ApplicationDbContext();
-            table = _applicationDbContext.Set<Staff>();
+            table = _applicationDbContext.Set<Products>();
         }
-
-        private void StaffView_Load(object sender, EventArgs e)
+        public void GetData(IQueryable<Products> query)
         {
-            GetData(table.Where(x => x.Status != EntityStatus.Deleted));
-        }
-        public void GetData(IQueryable<Staff> query)
-        {
-            var items = query.ToList();
-            dgvStaff.Rows.Clear();
+            var items = query.Include(x => x.Category).ToList();
+            dgvProduct.Rows.Clear();
             int sno = 1;
             foreach (var item in items)
             {
-                dgvStaff.Rows.Add(new object[]
+                dgvProduct.Rows.Add(new object[]
                 {
                     sno++,
                     item.Id,
                     item.Name,
                     item.Status,
                     item.Created,
-                    item.Phone,
-                    item.Role
+                    item.Price,
+                    item.Category.Name,
                 });
             }
         }
+        private void ProductView_Load(object sender, EventArgs e)
+        {
+            GetData(table.Where(x => x.Status != EntityStatus.Deleted));
+        }
         public override void searchText_TextChanged(object sender, EventArgs e)
         {
-            var query = table.Where(c =>
-            c.Status != EntityStatus.Deleted &&
-            ((c.Name.Contains(searchText.Text)
-            || c.Phone.Contains(searchText.Text))));
+            var query = table.Where(c => c.Status != EntityStatus.Deleted && ((c.Name.Contains(searchText.Text)
+            || c.Price.ToString().Contains(searchText.Text) || c.Category.Name.Contains(searchText.Text))));
             GetData(query);
         }
         public override void addBtn_Click(object sender, EventArgs e)
         {
-            StaffAdd staffAdd = new StaffAdd();
-            staffAdd.ShowDialog();
+            ProductAdd categoryAdd = new ProductAdd();
+            categoryAdd.ShowDialog();
             GetData(table.Where(x => x.Status != EntityStatus.Deleted));
         }
-        private void dgvStaff_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvProduct_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
-            string colName = dgvStaff.Columns[e.ColumnIndex].Name;
+            string colName = dgvProduct.Columns[e.ColumnIndex].Name;
             if (colName == "dgvEdit")
             {
-                int id = Convert.ToInt32(dgvStaff.Rows[e.RowIndex].Cells["dgvId"].Value);
-                StaffAdd staffAdd = new StaffAdd(id);
-                staffAdd.ShowDialog();
+                int id = Convert.ToInt32(dgvProduct.Rows[e.RowIndex].Cells["dgvId"].Value);
+                ProductAdd productAdd = new ProductAdd(id);
+                productAdd.ShowDialog();
             }
             else if (colName == "dgvDel")
             {
-                int id = Convert.ToInt32(dgvStaff.Rows[e.RowIndex].Cells["dgvId"].Value);
+                int id = Convert.ToInt32(dgvProduct.Rows[e.RowIndex].Cells["dgvId"].Value);
                 var item = table.Find(id);
                 if (item != null)
                 {
@@ -87,7 +84,7 @@ namespace Restaurant.WindowsForms
                 }
             }
             _applicationDbContext = new ApplicationDbContext();
-            table = _applicationDbContext.Set<Staff>();
+            table = _applicationDbContext.Set<Products>();
             GetData(table.Where(x => x.Status != EntityStatus.Deleted));
         }
     }

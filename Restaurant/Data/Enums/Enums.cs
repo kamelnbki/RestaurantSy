@@ -8,13 +8,13 @@ namespace Restaurant.Data.Enums
 {
     public class Enums
     {
-        public enum UserRoles
+        public enum EntityRoles
         {
-            Admin, Manager, Cashier, Waiter, Customer,
+            Admin, Manager, Cashier, Customer,
         }
         public enum TableStatus
         {
-            Available, Occupied, Reserved, OutOfService
+            Available, Occupied, Reserved, OutOfService    
         }
         public enum OrderStatus
         {

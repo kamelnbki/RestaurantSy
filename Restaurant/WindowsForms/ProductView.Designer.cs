@@ -1,6 +1,6 @@
 ﻿namespace Restaurant.WindowsForms
 {
-    partial class StaffView
+    partial class ProductView
     {
         /// <summary>
         /// Required designer variable.
@@ -35,24 +35,18 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            dgvStaff = new Guna.UI2.WinForms.Guna2DataGridView();
+            dgvProduct = new Guna.UI2.WinForms.Guna2DataGridView();
             dgvSno = new DataGridViewTextBoxColumn();
             dgvId = new DataGridViewTextBoxColumn();
             dgvName = new DataGridViewTextBoxColumn();
             dgvStatus = new DataGridViewTextBoxColumn();
             dgvDate = new DataGridViewTextBoxColumn();
-            dgvPhone = new DataGridViewTextBoxColumn();
-            dgvRole = new DataGridViewTextBoxColumn();
+            dgvPrice = new DataGridViewTextBoxColumn();
+            dgvCategoryName = new DataGridViewTextBoxColumn();
             dgvEdit = new DataGridViewImageColumn();
             dgvDel = new DataGridViewImageColumn();
-            ((System.ComponentModel.ISupportInitialize)dgvStaff).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvProduct).BeginInit();
             SuspendLayout();
-            // 
-            // HeaderLable
-            // 
-            HeaderLable.Location = new Point(30, 25);
-            HeaderLable.Size = new Size(104, 32);
-            HeaderLable.Text = "Staff List";
             // 
             // searchText
             // 
@@ -62,9 +56,8 @@
             searchText.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             searchText.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             searchText.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            searchText.Location = new Point(1056, 81);
             searchText.ShadowDecoration.CustomizableEdges = customizableEdges1;
-            searchText.Size = new Size(269, 53);
+            searchText.Size = new Size(627, 53);
             // 
             // addBtn
             // 
@@ -72,24 +65,19 @@
             addBtn.DialogResult = DialogResult.None;
             addBtn.HoverState.ImageSize = new Size(64, 64);
             addBtn.ImageFlip = Guna.UI2.WinForms.Enums.FlipOrientation.Normal;
-            addBtn.Location = new Point(43, 72);
             addBtn.PressedState.ImageSize = new Size(64, 64);
             addBtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
             // 
-            // searchLable
+            // dgvProduct
             // 
-            searchLable.Location = new Point(1056, 48);
-            // 
-            // dgvStaff
-            // 
-            dgvStaff.AllowUserToAddRows = false;
-            dgvStaff.AllowUserToDeleteRows = false;
-            dgvStaff.AllowUserToResizeRows = false;
+            dgvProduct.AllowUserToAddRows = false;
+            dgvProduct.AllowUserToDeleteRows = false;
+            dgvProduct.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = Color.White;
             dataGridViewCellStyle1.SelectionBackColor = Color.White;
             dataGridViewCellStyle1.SelectionForeColor = Color.Black;
-            dgvStaff.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dgvStaff.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvProduct.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvProduct.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.Silver;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -97,10 +85,10 @@
             dataGridViewCellStyle2.SelectionBackColor = Color.Silver;
             dataGridViewCellStyle2.SelectionForeColor = Color.Black;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvStaff.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dgvStaff.ColumnHeadersHeight = 60;
-            dgvStaff.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgvStaff.Columns.AddRange(new DataGridViewColumn[] { dgvSno, dgvId, dgvName, dgvStatus, dgvDate, dgvPhone, dgvRole, dgvEdit, dgvDel });
+            dgvProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgvProduct.ColumnHeadersHeight = 60;
+            dgvProduct.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgvProduct.Columns.AddRange(new DataGridViewColumn[] { dgvSno, dgvId, dgvName, dgvStatus, dgvDate, dgvPrice, dgvCategoryName, dgvEdit, dgvDel });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -108,11 +96,11 @@
             dataGridViewCellStyle3.SelectionBackColor = Color.White;
             dataGridViewCellStyle3.SelectionForeColor = Color.Black;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgvStaff.DefaultCellStyle = dataGridViewCellStyle3;
-            dgvStaff.GridColor = Color.White;
-            dgvStaff.Location = new Point(19, 179);
-            dgvStaff.Name = "dgvStaff";
-            dgvStaff.ReadOnly = true;
+            dgvProduct.DefaultCellStyle = dataGridViewCellStyle3;
+            dgvProduct.GridColor = Color.White;
+            dgvProduct.Location = new Point(12, 188);
+            dgvProduct.Name = "dgvProduct";
+            dgvProduct.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = Color.White;
             dataGridViewCellStyle4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -120,39 +108,39 @@
             dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dgvStaff.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dgvStaff.RowHeadersVisible = false;
-            dgvStaff.RowHeadersWidth = 51;
-            dgvStaff.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dgvProduct.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dgvProduct.RowHeadersVisible = false;
+            dgvProduct.RowHeadersWidth = 51;
+            dgvProduct.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle5.BackColor = Color.White;
             dataGridViewCellStyle5.SelectionBackColor = Color.White;
             dataGridViewCellStyle5.SelectionForeColor = Color.Black;
-            dgvStaff.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            dgvStaff.RowTemplate.Height = 70;
-            dgvStaff.Size = new Size(1353, 421);
-            dgvStaff.TabIndex = 7;
-            dgvStaff.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
-            dgvStaff.ThemeStyle.AlternatingRowsStyle.Font = null;
-            dgvStaff.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
-            dgvStaff.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
-            dgvStaff.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
-            dgvStaff.ThemeStyle.BackColor = Color.White;
-            dgvStaff.ThemeStyle.GridColor = Color.White;
-            dgvStaff.ThemeStyle.HeaderStyle.BackColor = Color.Silver;
-            dgvStaff.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
-            dgvStaff.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dgvStaff.ThemeStyle.HeaderStyle.ForeColor = Color.Black;
-            dgvStaff.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgvStaff.ThemeStyle.HeaderStyle.Height = 60;
-            dgvStaff.ThemeStyle.ReadOnly = true;
-            dgvStaff.ThemeStyle.RowsStyle.BackColor = Color.White;
-            dgvStaff.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dgvStaff.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dgvStaff.ThemeStyle.RowsStyle.ForeColor = Color.Black;
-            dgvStaff.ThemeStyle.RowsStyle.Height = 70;
-            dgvStaff.ThemeStyle.RowsStyle.SelectionBackColor = Color.White;
-            dgvStaff.ThemeStyle.RowsStyle.SelectionForeColor = Color.Black;
-            dgvStaff.CellClick += dgvStaff_CellClick;
+            dgvProduct.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dgvProduct.RowTemplate.Height = 70;
+            dgvProduct.Size = new Size(1354, 451);
+            dgvProduct.TabIndex = 7;
+            dgvProduct.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            dgvProduct.ThemeStyle.AlternatingRowsStyle.Font = null;
+            dgvProduct.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            dgvProduct.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            dgvProduct.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            dgvProduct.ThemeStyle.BackColor = Color.White;
+            dgvProduct.ThemeStyle.GridColor = Color.White;
+            dgvProduct.ThemeStyle.HeaderStyle.BackColor = Color.Silver;
+            dgvProduct.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvProduct.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dgvProduct.ThemeStyle.HeaderStyle.ForeColor = Color.Black;
+            dgvProduct.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgvProduct.ThemeStyle.HeaderStyle.Height = 60;
+            dgvProduct.ThemeStyle.ReadOnly = true;
+            dgvProduct.ThemeStyle.RowsStyle.BackColor = Color.White;
+            dgvProduct.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvProduct.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dgvProduct.ThemeStyle.RowsStyle.ForeColor = Color.Black;
+            dgvProduct.ThemeStyle.RowsStyle.Height = 70;
+            dgvProduct.ThemeStyle.RowsStyle.SelectionBackColor = Color.White;
+            dgvProduct.ThemeStyle.RowsStyle.SelectionForeColor = Color.Black;
+            dgvProduct.CellClick += dgvProduct_CellClick;
             // 
             // dgvSno
             // 
@@ -193,19 +181,19 @@
             dgvDate.Name = "dgvDate";
             dgvDate.ReadOnly = true;
             // 
-            // dgvPhone
+            // dgvPrice
             // 
-            dgvPhone.HeaderText = "Phone";
-            dgvPhone.MinimumWidth = 6;
-            dgvPhone.Name = "dgvPhone";
-            dgvPhone.ReadOnly = true;
+            dgvPrice.HeaderText = "Price";
+            dgvPrice.MinimumWidth = 6;
+            dgvPrice.Name = "dgvPrice";
+            dgvPrice.ReadOnly = true;
             // 
-            // dgvRole
+            // dgvCategoryName
             // 
-            dgvRole.HeaderText = "Role";
-            dgvRole.MinimumWidth = 6;
-            dgvRole.Name = "dgvRole";
-            dgvRole.ReadOnly = true;
+            dgvCategoryName.HeaderText = "Category Name";
+            dgvCategoryName.MinimumWidth = 6;
+            dgvCategoryName.Name = "dgvCategoryName";
+            dgvCategoryName.ReadOnly = true;
             // 
             // dgvEdit
             // 
@@ -231,35 +219,35 @@
             dgvDel.ReadOnly = true;
             dgvDel.Width = 40;
             // 
-            // StaffView
+            // ProductView
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1391, 594);
-            Controls.Add(dgvStaff);
-            Name = "StaffView";
-            Text = "StaffView";
-            Load += StaffView_Load;
+            ClientSize = new Size(1378, 651);
+            Controls.Add(dgvProduct);
+            Name = "ProductView";
+            Text = "ProductView";
+            Load += ProductView_Load;
             Controls.SetChildIndex(searchText, 0);
             Controls.SetChildIndex(searchLable, 0);
             Controls.SetChildIndex(addBtn, 0);
             Controls.SetChildIndex(HeaderLable, 0);
-            Controls.SetChildIndex(dgvStaff, 0);
-            ((System.ComponentModel.ISupportInitialize)dgvStaff).EndInit();
+            Controls.SetChildIndex(dgvProduct, 0);
+            ((System.ComponentModel.ISupportInitialize)dgvProduct).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2DataGridView dgvStaff;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvProduct;
         private DataGridViewTextBoxColumn dgvSno;
         private DataGridViewTextBoxColumn dgvId;
         private DataGridViewTextBoxColumn dgvName;
         private DataGridViewTextBoxColumn dgvStatus;
         private DataGridViewTextBoxColumn dgvDate;
-        private DataGridViewTextBoxColumn dgvPhone;
-        private DataGridViewTextBoxColumn dgvRole;
+        private DataGridViewTextBoxColumn dgvPrice;
+        private DataGridViewTextBoxColumn dgvCategoryName;
         private DataGridViewImageColumn dgvEdit;
         private DataGridViewImageColumn dgvDel;
     }

@@ -12,7 +12,7 @@ namespace Restaurant.Data.Entity
         public string Name { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
-        public UserRoles Role { get; set; }
+        public EntityRoles Role { get; set; }
         public ICollection<Order> Orders { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using Restaurant.Data.Entity;
@@ -18,7 +19,7 @@ namespace Restaurant.Data
     public class ApplicationDbContext : DbContext, IApplicationDbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>
-           optionsBuilder.UseSqlServer("Server=DESKTOP-Q5O3N70\\MXMSERVER;Database=RESTURANT_DB_2;Integrated Security=true;TrustServerCertificate=true;");
+           optionsBuilder.UseSqlServer("Server=.\\MXMSERVER;Database=RESTURANT_DB_2;Integrated Security=true;TrustServerCertificate=true;");
 
         public DbSet<User> Users { get; set; }
         public DbSet<Tables> Tables { get; set; }
@@ -26,6 +27,8 @@ namespace Restaurant.Data
         public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<MenuItems> MenuItems { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Staff> Staff { get; set; }
+        public DbSet<Products> Products { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -37,7 +40,7 @@ namespace Restaurant.Data
                 Name = "Admin",
                 UserName = "admin",
                 Password = "12345",
-                Role = UserRoles.Admin,
+                Role = EntityRoles.Admin,
                 Created = new DateTime(2025, 01, 01),
                 CreatedBy = "System",
                 Status = EntityStatus.Active,

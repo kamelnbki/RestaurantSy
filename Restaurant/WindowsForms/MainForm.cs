@@ -1,4 +1,5 @@
-﻿using Restaurant.Services;
+﻿using Restaurant.Data.Entity;
+using Restaurant.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,6 +58,11 @@ namespace Restaurant.WindowsForms
         private void staffBtn_Click(object sender, EventArgs e)
         {
             AddControlToPanel(new StaffView());
+        }
+
+        private void productsBtn_Click(object sender, EventArgs e)
+        {
+            AddControlToPanel(new ProductView());
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Restaurant.Services
     {
        public static int UserId { get; set; }
        public static string Name { get; set; }
-       public static UserRoles Role { get; set; }
+       public static EntityRoles Role { get; set; }
 
     }
 }
