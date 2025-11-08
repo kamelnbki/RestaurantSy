@@ -51,7 +51,7 @@
             // HeaderLable
             // 
             HeaderLable.Location = new Point(32, 25);
-            HeaderLable.Size = new Size(152, 32);
+            HeaderLable.Size = new Size(121, 25);
             HeaderLable.Text = "Category List";
             // 
             // searchText
@@ -63,8 +63,9 @@
             searchText.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             searchText.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             searchText.Location = new Point(1099, 81);
+            searchText.Margin = new Padding(4, 5, 10, 5);
             searchText.ShadowDecoration.CustomizableEdges = customizableEdges1;
-            searchText.Size = new Size(218, 53);
+            searchText.Size = new Size(213, 53);
             // 
             // addBtn
             // 
@@ -129,7 +130,7 @@
             dataGridViewCellStyle5.SelectionForeColor = Color.Black;
             dgvCategory.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvCategory.RowTemplate.Height = 70;
-            dgvCategory.Size = new Size(1353, 606);
+            dgvCategory.Size = new Size(1348, 588);
             dgvCategory.TabIndex = 6;
             dgvCategory.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgvCategory.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -233,9 +234,9 @@
             // 
             // CategoryView
             // 
-            AutoScaleDimensions = new SizeF(11F, 28F);
+            AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1391, 806);
+            ClientSize = new Size(1386, 788);
             Controls.Add(dgvCategory);
             Name = "CategoryView";
             Text = "CategoryView";

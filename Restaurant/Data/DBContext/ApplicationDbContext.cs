@@ -18,7 +18,7 @@ namespace Restaurant.Data
     public class ApplicationDbContext : DbContext, IApplicationDbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>
-           optionsBuilder.UseSqlServer("Server=DESKTOP-Q5O3N70\\MXMSERVER;Database=RESTURANT_DB_2;Integrated Security=true;TrustServerCertificate=true;");
+           optionsBuilder.UseSqlServer("Server=DESKTOP-I1IIHCJ;Database=RESTURANT_DB_2;Integrated Security=true;TrustServerCertificate=true;");
 
         public DbSet<User> Users { get; set; }
         public DbSet<Tables> Tables { get; set; }

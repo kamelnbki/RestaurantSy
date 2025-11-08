@@ -38,7 +38,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -50,24 +53,21 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             TopPanel = new Guna.UI2.WinForms.Guna2Panel();
             UserLabel = new Label();
             minimizeBtn = new Guna.UI2.WinForms.Guna2ControlBox();
             maxSizeBtn = new Guna.UI2.WinForms.Guna2ControlBox();
             exitBtn = new Guna.UI2.WinForms.Guna2ControlBox();
             SideBarePanel = new Guna.UI2.WinForms.Guna2Panel();
+            HomeBtn = new Guna.UI2.WinForms.Guna2Button();
+            staffBtn = new Guna.UI2.WinForms.Guna2Button();
             singoutBtn = new Guna.UI2.WinForms.Guna2Button();
             SettingBtn = new Guna.UI2.WinForms.Guna2Button();
             TablesBtn = new Guna.UI2.WinForms.Guna2Button();
             CategoriesBtn = new Guna.UI2.WinForms.Guna2Button();
-            HomeBtn = new Guna.UI2.WinForms.Guna2Button();
             restaurantLabel = new Label();
             Picture = new Guna.UI2.WinForms.Guna2PictureBox();
             CenterPanel = new Panel();
-            staffBtn = new Guna.UI2.WinForms.Guna2Button();
             TopPanel.SuspendLayout();
             SideBarePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Picture).BeginInit();
@@ -85,7 +85,7 @@
             TopPanel.Location = new Point(0, 0);
             TopPanel.Name = "TopPanel";
             TopPanel.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            TopPanel.Size = new Size(1400, 48);
+            TopPanel.Size = new Size(1370, 48);
             TopPanel.TabIndex = 1;
             // 
             // UserLabel
@@ -95,9 +95,10 @@
             UserLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             UserLabel.Location = new Point(271, 8);
             UserLabel.Name = "UserLabel";
-            UserLabel.Size = new Size(125, 31);
+            UserLabel.Size = new Size(104, 25);
             UserLabel.TabIndex = 3;
             UserLabel.Text = "UserName";
+            UserLabel.Click += UserLabel_Click;
             // 
             // minimizeBtn
             // 
@@ -106,7 +107,7 @@
             minimizeBtn.CustomizableEdges = customizableEdges1;
             minimizeBtn.FillColor = Color.FromArgb(139, 152, 166);
             minimizeBtn.IconColor = Color.White;
-            minimizeBtn.Location = new Point(1244, 8);
+            minimizeBtn.Location = new Point(1214, 8);
             minimizeBtn.Name = "minimizeBtn";
             minimizeBtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
             minimizeBtn.Size = new Size(44, 33);
@@ -119,7 +120,7 @@
             maxSizeBtn.CustomizableEdges = customizableEdges3;
             maxSizeBtn.FillColor = Color.FromArgb(139, 152, 166);
             maxSizeBtn.IconColor = Color.White;
-            maxSizeBtn.Location = new Point(1294, 8);
+            maxSizeBtn.Location = new Point(1264, 8);
             maxSizeBtn.Name = "maxSizeBtn";
             maxSizeBtn.ShadowDecoration.CustomizableEdges = customizableEdges4;
             maxSizeBtn.Size = new Size(44, 33);
@@ -131,7 +132,7 @@
             exitBtn.CustomizableEdges = customizableEdges5;
             exitBtn.FillColor = Color.Firebrick;
             exitBtn.IconColor = Color.White;
-            exitBtn.Location = new Point(1344, 8);
+            exitBtn.Location = new Point(1314, 8);
             exitBtn.Name = "exitBtn";
             exitBtn.ShadowDecoration.CustomizableEdges = customizableEdges6;
             exitBtn.Size = new Size(44, 33);
@@ -140,12 +141,12 @@
             // 
             // SideBarePanel
             // 
+            SideBarePanel.Controls.Add(HomeBtn);
             SideBarePanel.Controls.Add(staffBtn);
             SideBarePanel.Controls.Add(singoutBtn);
             SideBarePanel.Controls.Add(SettingBtn);
             SideBarePanel.Controls.Add(TablesBtn);
             SideBarePanel.Controls.Add(CategoriesBtn);
-            SideBarePanel.Controls.Add(HomeBtn);
             SideBarePanel.Controls.Add(restaurantLabel);
             SideBarePanel.Controls.Add(Picture);
             SideBarePanel.CustomizableEdges = customizableEdges23;
@@ -154,15 +155,66 @@
             SideBarePanel.Location = new Point(0, 48);
             SideBarePanel.Name = "SideBarePanel";
             SideBarePanel.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            SideBarePanel.Size = new Size(268, 996);
+            SideBarePanel.Size = new Size(268, 701);
             SideBarePanel.TabIndex = 1;
+            // 
+            // HomeBtn
+            // 
+            HomeBtn.AutoRoundedCorners = true;
+            HomeBtn.BackColor = Color.Transparent;
+            HomeBtn.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            HomeBtn.Checked = true;
+            HomeBtn.CheckedState.FillColor = Color.FromArgb(255, 192, 192);
+            customizableEdges9.BottomRight = false;
+            customizableEdges9.TopRight = false;
+            HomeBtn.CustomizableEdges = customizableEdges9;
+            HomeBtn.DisabledState.BorderColor = Color.DarkGray;
+            HomeBtn.DisabledState.CustomBorderColor = Color.DarkGray;
+            HomeBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            HomeBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            HomeBtn.FillColor = Color.FromArgb(192, 192, 255);
+            HomeBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            HomeBtn.ForeColor = Color.White;
+            HomeBtn.Image = Properties.Resources.house_chimney;
+            HomeBtn.Location = new Point(18, 309);
+            HomeBtn.Name = "HomeBtn";
+            HomeBtn.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            HomeBtn.Size = new Size(250, 67);
+            HomeBtn.TabIndex = 2;
+            HomeBtn.Text = "Home";
+            HomeBtn.Click += HomeBtn_Click;
+            // 
+            // staffBtn
+            // 
+            staffBtn.AutoRoundedCorners = true;
+            staffBtn.BackColor = Color.Transparent;
+            staffBtn.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            staffBtn.CheckedState.FillColor = Color.FromArgb(255, 192, 192);
+            customizableEdges11.BottomRight = false;
+            customizableEdges11.TopRight = false;
+            staffBtn.CustomizableEdges = customizableEdges11;
+            staffBtn.DisabledState.BorderColor = Color.DarkGray;
+            staffBtn.DisabledState.CustomBorderColor = Color.DarkGray;
+            staffBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            staffBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            staffBtn.FillColor = Color.FromArgb(192, 192, 255);
+            staffBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            staffBtn.ForeColor = Color.White;
+            staffBtn.Image = (Image)resources.GetObject("staffBtn.Image");
+            staffBtn.Location = new Point(18, 563);
+            staffBtn.Name = "staffBtn";
+            staffBtn.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            staffBtn.Size = new Size(250, 67);
+            staffBtn.TabIndex = 6;
+            staffBtn.Text = "Staff";
+            staffBtn.Click += staffBtn_Click;
             // 
             // singoutBtn
             // 
             singoutBtn.AutoRoundedCorners = true;
             singoutBtn.BackColor = Color.Transparent;
-            customizableEdges11.BottomLeft = false;
-            singoutBtn.CustomizableEdges = customizableEdges11;
+            customizableEdges13.BottomLeft = false;
+            singoutBtn.CustomizableEdges = customizableEdges13;
             singoutBtn.DisabledState.BorderColor = Color.DarkGray;
             singoutBtn.DisabledState.CustomBorderColor = Color.DarkGray;
             singoutBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -173,7 +225,7 @@
             singoutBtn.Image = Properties.Resources.sign_out_alt;
             singoutBtn.Location = new Point(3, 941);
             singoutBtn.Name = "singoutBtn";
-            singoutBtn.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            singoutBtn.ShadowDecoration.CustomizableEdges = customizableEdges14;
             singoutBtn.Size = new Size(236, 53);
             singoutBtn.TabIndex = 0;
             singoutBtn.Text = "Sing Out";
@@ -185,9 +237,9 @@
             SettingBtn.BackColor = Color.Transparent;
             SettingBtn.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             SettingBtn.CheckedState.FillColor = Color.FromArgb(255, 192, 192);
-            customizableEdges13.BottomRight = false;
-            customizableEdges13.TopRight = false;
-            SettingBtn.CustomizableEdges = customizableEdges13;
+            customizableEdges15.BottomRight = false;
+            customizableEdges15.TopRight = false;
+            SettingBtn.CustomizableEdges = customizableEdges15;
             SettingBtn.DisabledState.BorderColor = Color.DarkGray;
             SettingBtn.DisabledState.CustomBorderColor = Color.DarkGray;
             SettingBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -198,7 +250,7 @@
             SettingBtn.Image = Properties.Resources.settings;
             SettingBtn.Location = new Point(18, 652);
             SettingBtn.Name = "SettingBtn";
-            SettingBtn.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            SettingBtn.ShadowDecoration.CustomizableEdges = customizableEdges16;
             SettingBtn.Size = new Size(250, 67);
             SettingBtn.TabIndex = 5;
             SettingBtn.Text = "Setting";
@@ -209,9 +261,9 @@
             TablesBtn.BackColor = Color.Transparent;
             TablesBtn.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             TablesBtn.CheckedState.FillColor = Color.FromArgb(255, 192, 192);
-            customizableEdges15.BottomRight = false;
-            customizableEdges15.TopRight = false;
-            TablesBtn.CustomizableEdges = customizableEdges15;
+            customizableEdges17.BottomRight = false;
+            customizableEdges17.TopRight = false;
+            TablesBtn.CustomizableEdges = customizableEdges17;
             TablesBtn.DisabledState.BorderColor = Color.DarkGray;
             TablesBtn.DisabledState.CustomBorderColor = Color.DarkGray;
             TablesBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -222,7 +274,7 @@
             TablesBtn.Image = Properties.Resources.table_layout;
             TablesBtn.Location = new Point(18, 473);
             TablesBtn.Name = "TablesBtn";
-            TablesBtn.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            TablesBtn.ShadowDecoration.CustomizableEdges = customizableEdges18;
             TablesBtn.Size = new Size(250, 67);
             TablesBtn.TabIndex = 4;
             TablesBtn.Text = "Tables";
@@ -234,9 +286,9 @@
             CategoriesBtn.BackColor = Color.Transparent;
             CategoriesBtn.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             CategoriesBtn.CheckedState.FillColor = Color.FromArgb(255, 192, 192);
-            customizableEdges17.BottomRight = false;
-            customizableEdges17.TopRight = false;
-            CategoriesBtn.CustomizableEdges = customizableEdges17;
+            customizableEdges19.BottomRight = false;
+            customizableEdges19.TopRight = false;
+            CategoriesBtn.CustomizableEdges = customizableEdges19;
             CategoriesBtn.DisabledState.BorderColor = Color.DarkGray;
             CategoriesBtn.DisabledState.CustomBorderColor = Color.DarkGray;
             CategoriesBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -247,37 +299,11 @@
             CategoriesBtn.Image = Properties.Resources.category_alt;
             CategoriesBtn.Location = new Point(18, 391);
             CategoriesBtn.Name = "CategoriesBtn";
-            CategoriesBtn.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            CategoriesBtn.ShadowDecoration.CustomizableEdges = customizableEdges20;
             CategoriesBtn.Size = new Size(250, 67);
             CategoriesBtn.TabIndex = 3;
             CategoriesBtn.Text = "Categories";
             CategoriesBtn.Click += CategoriesBtn_Click;
-            // 
-            // HomeBtn
-            // 
-            HomeBtn.AutoRoundedCorners = true;
-            HomeBtn.BackColor = Color.Transparent;
-            HomeBtn.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            HomeBtn.Checked = true;
-            HomeBtn.CheckedState.FillColor = Color.FromArgb(255, 192, 192);
-            customizableEdges19.BottomRight = false;
-            customizableEdges19.TopRight = false;
-            HomeBtn.CustomizableEdges = customizableEdges19;
-            HomeBtn.DisabledState.BorderColor = Color.DarkGray;
-            HomeBtn.DisabledState.CustomBorderColor = Color.DarkGray;
-            HomeBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            HomeBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            HomeBtn.FillColor = Color.FromArgb(192, 192, 255);
-            HomeBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            HomeBtn.ForeColor = Color.White;
-            HomeBtn.Image = Properties.Resources.house_chimney;
-            HomeBtn.Location = new Point(18, 309);
-            HomeBtn.Name = "HomeBtn";
-            HomeBtn.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            HomeBtn.Size = new Size(250, 67);
-            HomeBtn.TabIndex = 2;
-            HomeBtn.Text = "Home";
-            HomeBtn.Click += HomeBtn_Click;
             // 
             // restaurantLabel
             // 
@@ -308,45 +334,20 @@
             CenterPanel.Dock = DockStyle.Fill;
             CenterPanel.Location = new Point(268, 48);
             CenterPanel.Name = "CenterPanel";
-            CenterPanel.Size = new Size(1132, 996);
+            CenterPanel.Size = new Size(1102, 701);
             CenterPanel.TabIndex = 2;
-            // 
-            // staffBtn
-            // 
-            staffBtn.AutoRoundedCorners = true;
-            staffBtn.BackColor = Color.Transparent;
-            staffBtn.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            staffBtn.CheckedState.FillColor = Color.FromArgb(255, 192, 192);
-            customizableEdges9.BottomRight = false;
-            customizableEdges9.TopRight = false;
-            staffBtn.CustomizableEdges = customizableEdges9;
-            staffBtn.DisabledState.BorderColor = Color.DarkGray;
-            staffBtn.DisabledState.CustomBorderColor = Color.DarkGray;
-            staffBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            staffBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            staffBtn.FillColor = Color.FromArgb(192, 192, 255);
-            staffBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            staffBtn.ForeColor = Color.White;
-            staffBtn.Image = (Image)resources.GetObject("staffBtn.Image");
-            staffBtn.Location = new Point(18, 563);
-            staffBtn.Name = "staffBtn";
-            staffBtn.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            staffBtn.Size = new Size(250, 67);
-            staffBtn.TabIndex = 6;
-            staffBtn.Text = "Staff";
-            staffBtn.Click += staffBtn_Click;
+            CenterPanel.Paint += CenterPanel_Paint;
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(120F, 120F);
+            AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.White;
-            ClientSize = new Size(1400, 1044);
+            ClientSize = new Size(1370, 749);
             Controls.Add(CenterPanel);
             Controls.Add(SideBarePanel);
             Controls.Add(TopPanel);
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            FormBorderStyle = FormBorderStyle.None;
             Name = "MainForm";
             Text = "MainForm";
             WindowState = FormWindowState.Maximized;

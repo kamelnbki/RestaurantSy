@@ -58,5 +58,15 @@ namespace Restaurant.WindowsForms
         {
             AddControlToPanel(new StaffView());
         }
+
+        private void UserLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CenterPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

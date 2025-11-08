@@ -47,10 +47,10 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.FromArgb(64, 0, 0);
-            button2.Location = new Point(725, 852);
-            button2.Margin = new Padding(5);
+            button2.Location = new Point(634, 639);
+            button2.Margin = new Padding(4);
             button2.Name = "button2";
-            button2.Size = new Size(263, 65);
+            button2.Size = new Size(230, 49);
             button2.TabIndex = 3;
             button2.Text = "Reserve Table";
             button2.UseVisualStyleBackColor = false;
@@ -66,10 +66,10 @@
             Menu_btn.FlatStyle = FlatStyle.Flat;
             Menu_btn.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
             Menu_btn.ForeColor = Color.FromArgb(237, 201, 118);
-            Menu_btn.Location = new Point(457, 712);
-            Menu_btn.Margin = new Padding(5);
+            Menu_btn.Location = new Point(399, 535);
+            Menu_btn.Margin = new Padding(4);
             Menu_btn.Name = "Menu_btn";
-            Menu_btn.Size = new Size(368, 81);
+            Menu_btn.Size = new Size(322, 61);
             Menu_btn.TabIndex = 4;
             Menu_btn.Text = "Explore our menu";
             Menu_btn.UseVisualStyleBackColor = false;
@@ -85,10 +85,10 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.FromArgb(64, 0, 0);
-            button1.Location = new Point(386, 852);
-            button1.Margin = new Padding(5);
+            button1.Location = new Point(338, 639);
+            button1.Margin = new Padding(4);
             button1.Name = "button1";
-            button1.Size = new Size(263, 65);
+            button1.Size = new Size(230, 49);
             button1.TabIndex = 6;
             button1.Text = "New Order";
             button1.UseVisualStyleBackColor = false;
@@ -96,10 +96,10 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.lwghw;
-            pictureBox1.Location = new Point(496, 5);
-            pictureBox1.Margin = new Padding(5);
+            pictureBox1.Location = new Point(434, 4);
+            pictureBox1.Margin = new Padding(4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(235, 271);
+            pictureBox1.Size = new Size(206, 203);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
@@ -108,21 +108,21 @@
             // 
             pictureBox2.BackColor = Color.FromArgb(255, 255, 128);
             pictureBox2.Image = Properties.Resources._1758634836946_1_;
-            pictureBox2.Location = new Point(185, 329);
-            pictureBox2.Margin = new Padding(5);
+            pictureBox2.Location = new Point(162, 247);
+            pictureBox2.Margin = new Padding(4);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(896, 374);
+            pictureBox2.Size = new Size(784, 280);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 5;
             pictureBox2.TabStop = false;
             // 
             // Home
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(254, 233, 222);
             BackgroundImageLayout = ImageLayout.Center;
-            ClientSize = new Size(1297, 935);
+            ClientSize = new Size(1317, 562);
             Controls.Add(pictureBox1);
             Controls.Add(button1);
             Controls.Add(pictureBox2);
@@ -130,7 +130,7 @@
             Controls.Add(button2);
             ForeColor = SystemColors.ActiveCaption;
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(5);
+            Margin = new Padding(4);
             Name = "Home";
             Text = "x";
             TransparencyKey = Color.Gainsboro;
