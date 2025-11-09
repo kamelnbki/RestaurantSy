@@ -69,7 +69,7 @@
             searchLable.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             searchLable.Location = new Point(728, 48);
             searchLable.Name = "searchLable";
-            searchLable.Size = new Size(75, 28);
+            searchLable.Size = new Size(61, 21);
             searchLable.TabIndex = 1;
             searchLable.Text = "Search";
             // 
@@ -94,7 +94,7 @@
             HeaderLable.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
             HeaderLable.Location = new Point(42, 25);
             HeaderLable.Name = "HeaderLable";
-            HeaderLable.Size = new Size(141, 32);
+            HeaderLable.Size = new Size(111, 25);
             HeaderLable.TabIndex = 3;
             HeaderLable.Text = "Header Text";
             // 
@@ -110,7 +110,7 @@
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.White;
-            ClientSize = new Size(1377, 747);
+            ClientSize = new Size(1370, 747);
             Controls.Add(guna2Separator1);
             Controls.Add(HeaderLable);
             Controls.Add(addBtn);

@@ -36,7 +36,7 @@ internal partial class Login : Form
                  MessageBoxButtons.OK, MessageBoxIcon.Warning);
             return;
         }
-        var user = table.Where(u => u.UserName == userName && u.Password == password)
+        var user = table.Where(u => u.UserName == userName && u.Password == password) 
                .FirstOrDefault();
         
         if (user is not null)

@@ -15,12 +15,95 @@ namespace Restaurant.WindowsForms
             InitializeComponent();
             _applicationDbContext = new ApplicationDbContext();
             table = _applicationDbContext.Set<Tables>();
+
+            this.WindowState = FormWindowState.Maximized;
+            this.MinimumSize = new Size(1024, 768);
+     
         }
 
         private void TablesView_Load(object sender, EventArgs e)
         {
             GetData(table.Where(x => x.Status != EntityStatus.Deleted));
+
+          
+            SetupTableLayout();
         }
+
+    
+        private void SetupTableLayout()
+        {
+          
+            if (dgvtable != null)
+            {
+                dgvtable.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+
+           
+                AdjustDataGridViewColumns();
+            }
+
+            if (searchText != null)
+                searchText.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+
+            if (addBtn != null)
+                addBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+        }
+
+       
+        private void AdjustDataGridViewColumns()
+        {
+            if (dgvtable.Columns.Count == 0) return;
+
+            try
+            {
+               
+                if (dgvtable.Columns.Count > 0)
+                    dgvtable.Columns[0].Width = (int)(dgvtable.Width * 0.05);
+
+                
+                if (dgvtable.Columns.Count > 1)
+                    dgvtable.Columns[1].Width = (int)(dgvtable.Width * 0.1);
+
+               
+                if (dgvtable.Columns.Count > 2)
+                    dgvtable.Columns[2].Width = (int)(dgvtable.Width * 0.15);
+
+           
+                if (dgvtable.Columns.Count > 3)
+                    dgvtable.Columns[3].Width = (int)(dgvtable.Width * 0.15);
+
+               
+                if (dgvtable.Columns.Count > 4)
+                    dgvtable.Columns[4].Width = (int)(dgvtable.Width * 0.2);
+
+              
+                if (dgvtable.Columns.Count > 5)
+                    dgvtable.Columns[5].Width = (int)(dgvtable.Width * 0.15);
+
+               
+                if (dgvtable.Columns.Count > 6)
+                    dgvtable.Columns[6].Width = (int)(dgvtable.Width * 0.15);
+
+                
+                if (dgvtable.Columns.Count > 7)
+                    dgvtable.Columns[7].Width = (int)(dgvtable.Width * 0.05);
+
+                
+                if (dgvtable.Columns.Count > 8)
+                    dgvtable.Columns[8].Width = (int)(dgvtable.Width * 0.05);
+            }
+            catch (Exception ex)
+            {
+              
+                Console.WriteLine("Error adjusting columns: " + ex.Message);
+            }
+        }
+
+       
+        private void TablesView_Resize(object sender, EventArgs e)
+        {
+            AdjustDataGridViewColumns();
+        }
+
         public void GetData(IQueryable<Tables> query)
         {
             var items = query.ToList();
@@ -39,19 +122,25 @@ namespace Restaurant.WindowsForms
                     item.Notes
                 });
             }
+
+            
+            AdjustDataGridViewColumns();
         }
+
         public override void searchText_TextChanged(object sender, EventArgs e)
         {
-            var query = table.Where(c => c.Status != EntityStatus.Deleted &&( c.Number.ToString() == searchText.Text
+            var query = table.Where(c => c.Status != EntityStatus.Deleted && (c.Number.ToString() == searchText.Text
             || c.Capacity.ToString() == searchText.Text || c.Notes.Contains(searchText.Text)));
             GetData(query);
         }
+
         public override void addBtn_Click(object sender, EventArgs e)
         {
             TableAdd tableAdd = new TableAdd();
             tableAdd.ShowDialog();
             GetData(table.Where(x => x.Status != EntityStatus.Deleted));
         }
+
         private void dgvtable_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
@@ -80,6 +169,5 @@ namespace Restaurant.WindowsForms
             table = _applicationDbContext.Set<Tables>();
             GetData(table.Where(x => x.Status != EntityStatus.Deleted));
         }
-
     }
 }

@@ -20,7 +20,18 @@ namespace Restaurant
             InitializeComponent();
             //RoundButton(Menu_btn, 30);
             //RoundButton(button1, 10);
+
+            this.WindowState = FormWindowState.Maximized;
+            this.MinimumSize = new Size(1024, 768);
+
+            if (Menu_btn != null)
+                Menu_btn.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+
+            if (button1 != null)
+                button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+
         }
+
         private void RoundButton(Button btn, int radius)
         {
             Rectangle rect = new Rectangle(0, 0, btn.Width, btn.Height);
